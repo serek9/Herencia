@@ -7,11 +7,10 @@ public class Jugador {
     private int trofeos;
     private ArrayList cartas;
 
-    public Jugador(String nombre, String password, int trofeos, ArrayList cartas) {
+    public Jugador(String nombre, String password, int trofeos) {
         this.nombre = nombre;
         this.password = password;
         this.trofeos = trofeos;
-        this.cartas = cartas;
     }
 
     public String getNombre() {return nombre;}
