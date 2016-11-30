@@ -58,10 +58,28 @@ public class Main {
         System.out.println("CONSEGUIR CARTAS.");
         String username = EntradaDatos.pedirCadenaNoVacia("Nombre de usuario: ");
         String password = EntradaDatos.pedirCadenaNoVacia("Contraseña: ");
-        boolean success = jugadores.usuarioCorrecto(username, password);
-        if (success){
-            System.out.println("Usuario correcto:)");
-            cartas.toString();
+        Jugador success = jugadores.usuarioCorrecto(username, password);
+        if (success !=null){
+            System.out.println("Hola "+success.getNombre());
+            if (success.contadorCartas()){
+                System.out.println("CARTAS DISPONIBLES:");
+                System.out.println(cartas.getLista());
+                String carta = EntradaDatos.pedirCadenaNoVacia("Elige carta (por nombre):");
+                Carta cartaSeleccionada = cartas.buscaCarta(carta);
+                if (cartaSeleccionada != null) {
+                    Carta existeCarta = success.getCartas().buscaCarta(cartaSeleccionada.getNombre());
+                    if (existeCarta == null) {
+                        success.getCartas().alta(cartaSeleccionada);
+                        System.out.println("Carta añadida!");
+                    }else {
+                        System.out.println("Error, carta ya adquirida.");
+                    }
+                }
+            }else {
+                System.out.println("Ya no puedes añadir más cartas!");
+                System.out.println("Tus cartas:");
+                System.out.println(success.getCartas());
+            }
         }else {
             System.out.println("Usuario incorrecto:(");
         }

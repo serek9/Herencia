@@ -5,12 +5,13 @@ public class Jugador {
     private String nombre;
     private String password;
     private int trofeos;
-    private ArrayList cartas;
+    private CartaList cartas;
 
     public Jugador(String nombre, String password, int trofeos) {
         this.nombre = nombre;
         this.password = password;
         this.trofeos = trofeos;
+        cartas = new CartaList();
     }
 
     public String getNombre() {return nombre;}
@@ -25,9 +26,9 @@ public class Jugador {
 
     public void setTrofeos(int trofeos) {this.trofeos = trofeos;}
 
-    public ArrayList getCartas() {return cartas;}
+    public CartaList getCartas() {return cartas;}
 
-    public void setCartas(ArrayList cartas) {this.cartas = cartas;}
+    public void setCartas(CartaList cartas) {this.cartas = cartas;}
 
     @Override
     public String toString() {
@@ -38,4 +39,15 @@ public class Jugador {
                 ", cartas=" + cartas +
                 '}';
     }
-}
+
+    public boolean contadorCartas(){
+        boolean b;
+        if (cartas.getLista().size()==6){
+            b = false;
+        }else {
+            b = true;
+        }
+        return b;
+    }
+
+  }
