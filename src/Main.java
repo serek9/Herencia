@@ -56,8 +56,8 @@ public class Main {
 
     public static void conseguirCartas(){
         System.out.println("CONSEGUIR CARTAS.");
-        String username = EntradaDatos.pedirCadenaNoVacia("Nombre de usuario: ");
-        String password = EntradaDatos.pedirCadenaNoVacia("Contraseña: ");
+        String username = EntradaDatos.pedirCadenaNoVacia("Nombre de usuario:");
+        String password = EntradaDatos.pedirCadenaNoVacia("Contraseña:");
         Jugador success = jugadores.usuarioCorrecto(username, password);
         if (success !=null){
             System.out.println("Hola "+success.getNombre());
@@ -83,11 +83,29 @@ public class Main {
         }else {
             System.out.println("Usuario incorrecto:(");
         }
-
     }
 
     public static void batalla(){
+        System.out.println("BATALLA");
+        System.out.println("Jugador 1");
+        String username1 = EntradaDatos.pedirCadenaNoVacia("Nombre de usuario:");
+        String password1 = EntradaDatos.pedirCadenaNoVacia("Contraseña:");
+        System.out.println("Jugador 2");
+        String username2 = EntradaDatos.pedirCadenaNoVacia("Nombre de usuario:");
+        String password2 = EntradaDatos.pedirCadenaNoVacia("Contraseña:");
+        Jugador success1 = jugadores.usuarioCorrecto(username1, password1);
+        Jugador success2 = jugadores.usuarioCorrecto(username2, password2);
+        if (success1 !=null && success2 != null){
 
+        }else{
+            System.out.println("Uno de los dos usuarios ha sido introducido incorrectamente.");
+        }
+    }
+
+    public CartaList cartasBatalla(Jugador j){
+        System.out.println("Elige las cartas de tu mazo:");
+        System.out.println();
+        return null;
     }
 
     public static void obtenerRanking(){
