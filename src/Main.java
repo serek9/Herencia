@@ -96,7 +96,10 @@ public class Main {
         Jugador success1 = jugadores.usuarioCorrecto(username1, password1);
         Jugador success2 = jugadores.usuarioCorrecto(username2, password2);
         if (success1 !=null && success2 != null){
-
+            System.out.println("Jugador 1 elige sus cartas.");
+            System.out.println(success1.getCartas());
+            System.out.println("Jugador 2 elige sus cartas.");
+            System.out.println(success2.getCartas());
         }else{
             System.out.println("Uno de los dos usuarios ha sido introducido incorrectamente.");
         }
