@@ -1,4 +1,8 @@
-public class Main {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Main{
     private static JugadorList jugadores = new JugadorList();
     private static CartaList cartas = new CartaList();
     public static void main(String[] args) {
@@ -14,10 +18,10 @@ public class Main {
         CartaTropa arquero = new CartaTropa("Arquero", 4, 6,6); cartas.alta(arquero);
         CartaTropa gigante = new CartaTropa("Gigante", 6, 8, 8); cartas.alta(gigante);
 
-        Jugador j1 = new Jugador("Sergio", "sergio", 0); jugadores.alta(j1);
-        Jugador j2 = new Jugador("Alberto", "alberto", 0); jugadores.alta(j2);
-        Jugador j3 = new Jugador("Nando", "nando", 0); jugadores.alta(j3);
-        Jugador j4 = new Jugador("Larry", "larry", 0); jugadores.alta(j4);
+        Jugador j1 = new Jugador("Sergio", "sergio", 5); jugadores.alta(j1);
+        Jugador j2 = new Jugador("Alberto", "alberto", 1); jugadores.alta(j2);
+        Jugador j3 = new Jugador("Nando", "nando", 3); jugadores.alta(j3);
+        Jugador j4 = new Jugador("Larry", "larry", 4); jugadores.alta(j4);
 
         mostrarMenu();
         try {
@@ -112,6 +116,7 @@ public class Main {
     }
 
     public static void obtenerRanking(){
-
+        System.out.println("RANKING");
+        jugadores.doRanking();
     }
 }

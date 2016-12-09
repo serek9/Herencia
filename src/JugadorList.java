@@ -1,7 +1,9 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class JugadorList{
+public class JugadorList  {
 
     public ArrayList<Jugador> lista = new ArrayList<>();
 
@@ -27,5 +29,19 @@ public class JugadorList{
         return null;
     }
 
+    public void doRanking(){
+        List<Integer> trofeos = new ArrayList<>();
+        for (Jugador j: lista){
+            trofeos.add(j.getTrofeos());
+        }
+        Collections.sort(trofeos);
+        for (int i = trofeos.size()-1; i >= 0 ; i--) {
+            for (int j = 0; j < lista.size(); j++){
+                if (trofeos.get(i) == lista.get(j).getTrofeos()){
+                    System.out.println(lista.get(j).getNombre()+" -> "+lista.get(j).getTrofeos());
+                }
+            }
+        }
+    }
 
 }

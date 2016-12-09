@@ -14,6 +14,10 @@ public class Jugador {
         cartas = new CartaList();
     }
 
+    public Jugador(){
+
+    }
+
     public String getNombre() {return nombre;}
 
     public void setNombre(String nombre) {this.nombre = nombre;}
